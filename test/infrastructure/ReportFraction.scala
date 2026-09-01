@@ -43,7 +43,7 @@ abstract class ReportFraction {
 
 object ReportFraction3_1 extends ReportFraction {
 
-  override def Tests() = new TetrisTestSuite3_1()
+  override def Tests(): TetrisTestSuite3_1 = new TetrisTestSuite3_1()
 
   def main(args: Array[String]) : Unit = {
     val out = System.out
@@ -59,7 +59,7 @@ object ReportFraction3_1 extends ReportFraction {
 }
 
 object ReportFraction3_2 extends ReportFraction {
-  override def Tests() = new TetrisTestSuite3_2()
+  override def Tests(): TetrisTestSuite3_2 = new TetrisTestSuite3_2()
 
   def main(args : Array[String]) : Unit  = {
     val out = System.out

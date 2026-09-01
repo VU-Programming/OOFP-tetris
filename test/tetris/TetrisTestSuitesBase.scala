@@ -3,7 +3,7 @@ package tetris
 import infrastructure.ScoreCounter
 import org.scalatest.{Args, Status, Suites}
 
-class TetrisTestSuitesBase(suites : TetrisTestSuiteBase*) extends Suites(suites : _*){
+class TetrisTestSuitesBase(suites : TetrisTestSuiteBase*) extends Suites(suites*){
 
 
 
