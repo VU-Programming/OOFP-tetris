@@ -4,19 +4,14 @@ plugins {
     id 'application'
 }
 
-
- application {
-   mainClass.set("tetris.game.TetrisGame")
- }
- 
-
-
-
-ext {
-    scalaMajorVersion = '2.13'
-    scalaVersion = "${scalaMajorVersion}.16"
+application {
+    mainClass.set("tetris.game.TetrisGame")
 }
 
+ext {
+    scalaMajorVersion = '3.3'
+    scalaVersion = "${scalaMajorVersion}.8"
+}
 
 repositories {
 
@@ -35,17 +30,18 @@ sourceSets.main.scala.srcDirs = ['src']
 sourceSets.test.scala.srcDirs = ['test']
 
 dependencies {
-  implementation("org.processing:core:4.4.4")
+    implementation("org.scala-lang:scala3-compiler_3:${scalaVersion}")
+    implementation("org.processing:core:4.4.4")
     implementation("org.jogamp.gluegen:gluegen-rt-main:2.5.0")
-// https://mvnrepository.com/artifact/org.jogamp.gluegen/gluegen-rt
+    // https://mvnrepository.com/artifact/org.jogamp.gluegen/gluegen-rt
     implementation("org.jogamp.gluegen:gluegen-rt:2.5.0")
 
-    implementation "org.scala-lang:scala-library:2.13.16"
+    implementation("org.scala-lang:scala3-library_3:${scalaVersion}")
     testImplementation('junit:junit:4.13.2')
-    testImplementation("org.scala-lang:scala-reflect") 
 
     testImplementation('org.junit.vintage:junit-vintage-engine:5.9.0')
-    testImplementation("org.scalatest:scalatest_${scalaMajorVersion}:3.0.9")
+    testImplementation("org.scalatest:scalatest_3:3.2.19")
+    testImplementation("org.scalatestplus:junit-4-13_3:3.2.19.0")
 }
 
 task zip(type: Zip) {
@@ -94,4 +90,12 @@ task fraction3_2(type: JavaExec, dependsOn: classes) {
     classpath sourceSets.test.runtimeClasspath
     classpath sourceSets.main.runtimeClasspath
     //classpath configurations.runtime
+}
+
+task scalaRepl(type: JavaExec, dependsOn: classes) {
+    group = "scala"
+    mainClass = "dotty.tools.MainGenericRunner"
+    classpath = sourceSets.main.runtimeClasspath
+    standardInput = System.in
+    args("-usejavacp")
 }
