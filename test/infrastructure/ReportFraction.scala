@@ -2,7 +2,8 @@
 package infrastructure
 
 import java.io.{OutputStream, PrintStream}
-
+import java.io.{FileOutputStream, PrintWriter}
+import java.nio.file.{Files, Path}
 import org.scalatest.{Args, ConfigMap, Reporter, Suites}
 import org.scalatest.events.{Event, TestFailed, TestSucceeded}
 import tetris.{TetrisTestSuite3_1, TetrisTestSuite3_2, TetrisTestSuitesBase}
@@ -52,8 +53,9 @@ object ReportFraction3_1 extends ReportFraction {
     out.printf("You got %d/%d points!\n", scoreCounter.points, scoreCounter.maxPoints)
     if(scoreCounter.points >= Tests().MinPointsToPass ) out.printf("You passed exercise 3.1\n")
     else out.printf("You did not pass exercise 3.1 yet\n")
-    val frac = if(scoreCounter.points >= Tests().MinPointsToPass) 1.0 else 0
-    out.printf("Fractiontouseforcodegrade %.2f",frac)
+    val frac = if(scoreCounter.points >= Tests().MinPointsToPass) 1 else 0 
+    val result = s"""{ "tag": "points", "points": "${frac}/${1}" }"""
+    Files.writeString(Path.of("grade"), result)
 
   }
 }
@@ -67,6 +69,7 @@ object ReportFraction3_2 extends ReportFraction {
 
     out.printf("You got %d/%d points!\n", scoreCounter.points, scoreCounter.maxPoints)
     out.printf("Your base grade for exercise 3 will be : %.2f\n",scoreCounter.fraction() * Tests().MaxPoints)
-    out.printf("Fractiontouseforcodegrade %.2f",scoreCounter.fraction())
+    val result = s"""{ "tag": "points", "points": "${scoreCounter.points}/${scoreCounter.maxPoints}" }"""
+    Files.writeString(Path.of("grade"), result)
   }
 }
