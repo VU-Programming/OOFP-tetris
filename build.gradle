@@ -62,6 +62,8 @@ task zip(type: Zip) {
 
 task test3_1(type: Test) {
     description="Run tests for assignment 3.1 (tetris)"
+    testClassesDirs = sourceSets.test.output.classesDirs
+    classpath = sourceSets.test.runtimeClasspath
     filter {
         includeTestsMatching "tetris.TetrisTestSuite3_1"
     }
@@ -69,6 +71,8 @@ task test3_1(type: Test) {
 
 task test3_2(type: Test) {
     description="Run tests for assignment 3.2 (tetris)"
+    testClassesDirs = sourceSets.test.output.classesDirs
+    classpath = sourceSets.test.runtimeClasspath
     filter {
         includeTestsMatching "tetris.TetrisTestSuite3_2"
     }
