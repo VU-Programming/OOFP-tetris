@@ -1,6 +1,7 @@
 package tetris
 
-class MovementTests extends TetrisTestSuiteBase {
+@org.scalatest.DoNotDiscover
+class Test04_Movement extends TetrisTestSuiteBase {
 
   test("testMovement") {
     checkGame( List(TestFrame(4,

@@ -52,7 +52,7 @@ case class TetrisLogicWrapper
 }
 
 
-class TetrisTestSuiteBase  extends GameTestSuite
+abstract class TetrisTestSuiteBase  extends GameTestSuite
   [TetrisAction, TetrisGridTypeWrapper, TetrisLogicWrapper, (Dimensions, Seq[Seq[CellType]])]() {
   def charToGridType(char: Char) : TetrisGridTypeWrapper = TetrisGridTypeWrapper(char match {
     case 'I' => ICell

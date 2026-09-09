@@ -1,6 +1,7 @@
 package tetris
 
-class BlockedTests extends TetrisTestSuiteBase {
+@org.scalatest.DoNotDiscover
+class Test06_Blocked extends TetrisTestSuiteBase {
 
 
   test("testMoveOutLeft") {
@@ -60,7 +61,8 @@ class BlockedTests extends TetrisTestSuiteBase {
           """O..L..
             |OLLL..
             |O.....""")),
-      hint = "The current tetromino cannot move into existing blocks—instead, the movement is ignored.")
+      hint = "The current tetromino cannot move into existing blocks—instead, the\n" +
+        "movement is ignored.")
   }
 
 
@@ -81,7 +83,8 @@ class BlockedTests extends TetrisTestSuiteBase {
           """...SSJ
             |..SS..
             |......""")),
-      hint = "The current tetromino cannot move into existing blocks—instead, the movement is ignored.")
+      hint = "The current tetromino cannot move into existing blocks—instead, the\n" +
+        "movement is ignored.")
   }
 
   test("testBlockedByBlocksRotateLeft") {
@@ -97,7 +100,8 @@ class BlockedTests extends TetrisTestSuiteBase {
           """J..
             |JJJ
             |Z..""")),
-      hint = "The current tetromino cannot rotate into existing blocks –– instead, the rotation is ignored.")
+      hint = "The current tetromino cannot rotate into existing blocks –– instead,\n" +
+        "the rotation is ignored.")
   }
 
 
@@ -127,7 +131,8 @@ class BlockedTests extends TetrisTestSuiteBase {
             |..I...
             |..I...
             |..I...""")),
-      hint = "The current tetromino cannot rotate into existing blocks –– instead, the rotation is ignored.")
+      hint = "The current tetromino cannot rotate into existing blocks –– instead,\n" +
+        "the rotation is ignored.")
   }
 
   test("testRotateLeftOutRight") {

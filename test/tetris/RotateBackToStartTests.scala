@@ -1,6 +1,7 @@
 package tetris
 
-class RotateBackToStartTests extends TetrisTestSuiteBase {
+@org.scalatest.DoNotDiscover
+class Test03_RotateBackToStart extends TetrisTestSuiteBase {
 
   // tests where we rotate a couple of times to get
   // back to the original position

@@ -1,6 +1,7 @@
 package tetris
 
-class RotationTests extends TetrisTestSuiteBase {
+@org.scalatest.DoNotDiscover
+class Test02_Rotation extends TetrisTestSuiteBase {
 
   test("testIRotations") {
     checkGame( List(

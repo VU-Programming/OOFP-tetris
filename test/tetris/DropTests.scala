@@ -1,6 +1,7 @@
 package tetris
 
-class DropTests extends TetrisTestSuiteBase {
+@org.scalatest.DoNotDiscover
+class Test05_Drop extends TetrisTestSuiteBase {
 
   test("testDrop") {
     checkGame( initialBoard =
@@ -157,7 +158,9 @@ class DropTests extends TetrisTestSuiteBase {
             |..TI
             |.TTI
             |.TTI""")),
-      hint = "The drop action immediately moves the current tetromino all the way down such that it collides with other blocks or the bottom of the board, and spawns a new tetromino."
+      hint = "The drop action immediately moves the current tetromino all the way\n" +
+        "down such that it collides with other blocks or the bottom of the\n" +
+        "board, and spawns a new tetromino."
     )
   }
 

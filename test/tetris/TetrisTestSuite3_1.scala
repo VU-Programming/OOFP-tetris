@@ -6,10 +6,10 @@ import org.scalatest.{Args, Status, Suites}
 import org.scalatestplus.junit.JUnitRunner
 
 @RunWith(classOf[JUnitRunner])
-class TetrisTestSuite3_1 extends TetrisTestSuitesBase(new PlacementTests,
-  new RotationTests,
-  new RotateBackToStartTests,
-  new MovementTests)
+class TetrisTestSuite3_1 extends TetrisTestSuitesBase(new Test01_Placement,
+  new Test02_Rotation,
+  new Test03_RotateBackToStart,
+  new Test04_Movement)
 {
   val MinPointsToPass = 17
 

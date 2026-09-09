@@ -1,6 +1,7 @@
 package tetris
 
-class FullGameTests extends TetrisTestSuiteBase {
+@org.scalatest.DoNotDiscover
+class Test10_FullGame extends TetrisTestSuiteBase {
 
   val game5x9 = List(TestFrame(0,
     """.....

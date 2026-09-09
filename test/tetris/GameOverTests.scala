@@ -1,6 +1,7 @@
 package tetris
 
-class GameOverTests extends TetrisTestSuiteBase {
+@org.scalatest.DoNotDiscover
+class Test09_GameOver extends TetrisTestSuiteBase {
 
   test("testGameOver") {
     checkGame(List(TestFrame(2,

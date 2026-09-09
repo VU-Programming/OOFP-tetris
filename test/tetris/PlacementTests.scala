@@ -1,6 +1,7 @@
 package tetris
 
-class PlacementTests extends TetrisTestSuiteBase {
+@org.scalatest.DoNotDiscover
+class Test01_Placement extends TetrisTestSuiteBase {
 
   test("testPlacementI") {
     checkGame(List(TestFrame(0,

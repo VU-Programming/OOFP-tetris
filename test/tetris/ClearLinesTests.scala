@@ -1,6 +1,7 @@
 package tetris
 
-class ClearLinesTests extends TetrisTestSuiteBase {
+@org.scalatest.DoNotDiscover
+class Test08_ClearLines extends TetrisTestSuiteBase {
 
   test("testClear1Line") {
     checkGame(initialBoard =
@@ -39,7 +40,10 @@ class ClearLinesTests extends TetrisTestSuiteBase {
             |...
             |.S.
             |.SS""")
-      ), hint = "When a new tetromino is placed, any full lines are removed from the board. If a lines is removed, the lines above it are moved down to such that the line is replaced by the line above it. Empty lines are added to the top to ensure the game has the correct height."
+      ), hint = "When a new tetromino is placed, any full lines are removed from the\n" +
+        "board. If a lines is removed, the lines above it are moved down to\n" +
+        "such that the line is replaced by the line above it. Empty lines are\n" +
+        "added to the top to ensure the game has the correct height."
     )
   }
 
@@ -144,7 +148,10 @@ class ClearLinesTests extends TetrisTestSuiteBase {
             |.Z.I
             |ZZ.I
             |Z.ZI""")
-      ), hint = "When a new tetromino is placed, any full lines are removed from the board. If a lines is removed, the lines above it are moved down to such that the line is replaced by the line above it. Empty lines are added to the top to ensure the game has the correct height."
+      ), hint = "When a new tetromino is placed, any full lines are removed from the\n" +
+        "board. If a lines is removed, the lines above it are moved down to\n" +
+        "such that the line is replaced by the line above it. Empty lines are\n" +
+        "added to the top to ensure the game has the correct height."
     )
   }
 
@@ -230,7 +237,10 @@ class ClearLinesTests extends TetrisTestSuiteBase {
             |....
             |.Z.I
             |Z.ZI""")
-      ), hint = "When a new tetromino is placed, any full lines are removed from the board. If a lines is removed, the lines above it are moved down to such that the line is replaced by the line above it. Empty lines are added to the top to ensure the game has the correct height."
+      ), hint = "When a new tetromino is placed, any full lines are removed from the\n" +
+        "board. If a lines is removed, the lines above it are moved down to\n" +
+        "such that the line is replaced by the line above it. Empty lines are\n" +
+        "added to the top to ensure the game has the correct height."
     )
   }
 
@@ -316,7 +326,10 @@ class ClearLinesTests extends TetrisTestSuiteBase {
             |....
             |....
             |.Z.I""")
-      ), hint = "When a new tetromino is placed, any full lines are removed from the board. If a lines is removed, the lines above it are moved down to such that the line is replaced by the line above it. Empty lines are added to the top to ensure the game has the correct height."
+      ), hint = "When a new tetromino is placed, any full lines are removed from the\n" +
+        "board. If a lines is removed, the lines above it are moved down to\n" +
+        "such that the line is replaced by the line above it. Empty lines are\n" +
+        "added to the top to ensure the game has the correct height."
     )
   }
 
@@ -412,7 +425,10 @@ class ClearLinesTests extends TetrisTestSuiteBase {
             |....
             |...O
             |.ZZZ""")
-      ), hint = "When a new tetromino is placed, any full lines are removed from the board. If a lines is removed, the lines above it are moved down to such that the line is replaced by the line above it. Empty lines are added to the top to ensure the game has the correct height."
+      ), hint = "When a new tetromino is placed, any full lines are removed from the\n" +
+        "board. If a lines is removed, the lines above it are moved down to\n" +
+        "such that the line is replaced by the line above it. Empty lines are\n" +
+        "added to the top to ensure the game has the correct height."
     )
   }
 

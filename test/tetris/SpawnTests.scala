@@ -1,6 +1,7 @@
 package tetris
 
-class SpawnTests extends TetrisTestSuiteBase {
+@org.scalatest.DoNotDiscover
+class Test07_Spawn extends TetrisTestSuiteBase {
 
   test("testSpawn") {
     checkGame(List(TestFrame(0,
@@ -33,7 +34,8 @@ class SpawnTests extends TetrisTestSuiteBase {
           |.IIII
           |.IIII
           |.IIII""")),
-    hint ="A new tetromino is spawned when moveDown is called but the current tetromino cannot move down.")
+    hint = "A new tetromino is spawned when moveDown is called but the current\n" +
+      "tetromino cannot move down.")
   }
 
 
@@ -101,6 +103,7 @@ class SpawnTests extends TetrisTestSuiteBase {
           |LLL.
           |J...
           |JJJ.""")),
-      hint ="A new tetromino is spawned when moveDown is called but the current tetromino cannot move down.")
+      hint = "A new tetromino is spawned when moveDown is called but the current\n" +
+        "tetromino cannot move down.")
   }
 }
